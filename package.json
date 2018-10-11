@@ -4,10 +4,15 @@
   "description": "run the gulp task with Travis CI",
   "main": "index.js",
   "devDependencies": {
-    "gulp": "^4.0.0"
-  }
+    "cssnano": "^4.1.4",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss-preset-env": "^6.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp:css": "./node_modules/.bin/gulp css"
   },
   "repository": {
     "type": "git",
@@ -18,5 +23,5 @@
   "bugs": {
     "url": "https://github.com/rkonno/travis-frontend-playground/issues"
   },
-  "homepage": "https://github.com/rkonno/travis-frontend-playground#readme",
+  "homepage": "https://github.com/rkonno/travis-frontend-playground#readme"
 }

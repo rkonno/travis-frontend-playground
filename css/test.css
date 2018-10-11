@@ -1,0 +1,13 @@
+:root {
+    --fontSize: 1rem;
+    --mainColor: #12345678;
+}
+
+html {
+    font-size: var(--fontSize);
+    color: var(--mainColor);
+}
+
+div {
+    display: flex;
+}
