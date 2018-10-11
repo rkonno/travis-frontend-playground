@@ -1,0 +1,22 @@
+{
+  "name": "travis-frontend-playground",
+  "version": "1.0.0",
+  "description": "run the gulp task with Travis CI",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkonno/travis-frontend-playground.git"
+  },
+  "author": "Ryota Konno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rkonno/travis-frontend-playground/issues"
+  },
+  "homepage": "https://github.com/rkonno/travis-frontend-playground#readme",
+}
