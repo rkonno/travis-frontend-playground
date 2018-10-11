@@ -1,10 +1,19 @@
 language: node_js
 node_js:
-  - '8.12.0'
-before_script:
-  - "npm install"
+  - 8.12.0
 script:
-  - "npm run gulp:css"
+  - npm run gulp:css
+after_success:
+  - openssl aes-256-cbc -K $encrypted_2d98e99ca10d_key -iv $encrypted_2d98e99ca10d_iv -in build_key.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - git config --global user.email "TravisCI@sample.com"
+  - git config --global user.name "TravisCI"
+  - git remote set-url origin git@github.com:rkonno/travis-frontend-playground.git
+  - git add .
+  - git checkout -b distribution
+  - git commit -m "By Travis CI (JOB $TRAVIS_JOB_NUMBER)"
+  - git push -u origin distribution
 cache:
   directories:
-  - "node_modules"
+  - node_modules
