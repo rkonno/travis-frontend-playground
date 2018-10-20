@@ -18,8 +18,9 @@ jobs:
         - git config --local user.name "$GIT_CONFIG_NAME"
         - git config --local user.email "$GIT_CONFIG_EMAIL"
         - git tag "v$(cat ./src/manifest.json  | jq -r '.version')"
+        - npm run gulp:build
       deploy:
         provider: releases
         api_key:
           secure: TF2ky2fkmWvIJKkqHe/NjdOb2gYNp9NRkTBtYte3SC4hkhxt/d7hkcowQ0PhPA1AbFcWHIE5Ji3jDjohJoa9GIJl+JSYaIJGX29gN0yLGSXXQ9QPHrb1IfmRKUcVg74SvOeD03TXfPep0uSFICDNux/Hd/U0T/qgeMbee0RH3n6eD/jmw016LiF8eQTuFSV6Hsao79onzWy8prhLWT/4QqR+HS3N7jYJbcrXf07oLe11pFLcOKXAbYcx6VqqEU1yvjkA3QA+yQvdUgSfcAIq74eT36h2LPSKm/Ldcc1ciiksSxW+ja9/suQ7Qfx283Sz3dQc/QTFsfA/mRDYLRXrbs+zI/lNntIHufAAfhBX8AANiMdxr7I7TCqXndqZefUT+OOQn+fYk0fMZLTKkbumGu7+r/dinQHoYOcMAuGFtugvz1CSFd3l0pdIZR5eK14IFqoWdys/CYxyChF66JUqwLwJAbmlQroBW7n44MfIC8KK2iKTQHuMGjq6HpdB1IDBCA+pBcnXgykd0f0qdN5AkglHh/TsJfNoBg9HFXJEfX5uRJdSrnnTi6qb0TFnHSMVDJfCkoyeQocSbLhbrq8fuzz4TYXABMtFX82V2uOa/lbYCL+rDIffmP9noVZeMCUONsvypq+WPh5YsY06se+1gWQRTFDmJMuG3BKgklOZxUs=
-        file: ./archive.zip
+        file: archive.zip
