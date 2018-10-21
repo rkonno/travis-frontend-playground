@@ -19,9 +19,14 @@ gulp.task('manifest', () => {
        .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('clean', () => {
+gulp.task('clean:dist', () => {
     const del = require('del');
-    return del(['./dist', './*.zip'], { force:true });
+    return del('./dist', { force: true });
+});
+
+gulp.task('clean:zip', () => {
+    const del = require('del');
+    return del('./archive.zip', { force: true });
 });
 
 gulp.task('zip', () => {
@@ -33,7 +38,7 @@ gulp.task('zip', () => {
 
 gulp.task('build',
     gulp.series(
-        'clean',
+        'clean:dist',
         'styles',
         'manifest'
     )
@@ -41,6 +46,7 @@ gulp.task('build',
 
 gulp.task('deploy',
     gulp.series(
+        'clean:zip',
         'zip'
     )
 );
