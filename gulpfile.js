@@ -35,7 +35,12 @@ gulp.task('build',
     gulp.series(
         'clean',
         'styles',
-        'manifest',
+        'manifest'
+    )
+);
+
+gulp.task('deploy',
+    gulp.series(
         'zip'
     )
 );
