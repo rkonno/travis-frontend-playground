@@ -17,7 +17,7 @@ jobs:
         - git config --local user.name "$GIT_CONFIG_NAME"
         - git config --local user.email "$GIT_CONFIG_EMAIL"
         - git tag "v$(cat ./src/manifest.json  | jq -r '.version')"
-#        - npm run gulp:build
+        - npm run gulp:build
       deploy:
         provider: releases
         api_key:
