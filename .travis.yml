@@ -13,14 +13,11 @@ jobs:
     - stage: deploy
       if: branch = master
       script: echo "Deploying to GitHub releases ..."
-      script: pwd
-      script: ls -la
       before_deploy:
         - git config --local user.name "$GIT_CONFIG_NAME"
         - git config --local user.email "$GIT_CONFIG_EMAIL"
         - git tag "v$(cat ./src/manifest.json  | jq -r '.version')"
-        - npm run gulp:build
-        - ls -la
+#        - npm run gulp:build
       deploy:
         provider: releases
         api_key:
